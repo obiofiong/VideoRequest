@@ -1,0 +1,28 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video request</title>
+    <link rel="stylesheet" href="{% static 'videorequest/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container">
+        <form  class="form-signin" method="POST" action="{% url 'vrform' %}">
+            {% csrf_token %}
+            <h4 class="form-signin-heading"> Video Request</h4>
+            <div class="form-group">
+                <label for="inputName" class="sr-only">Video title</label>
+                {{ form.videoname }}
+            </div>
+            <div class="form-group">
+                <label for="comment" class="sr-only"> Details to be discussed </label>
+                {{ form.videosec }}
+                
+            </div>
+            <button class="btn btn-lg btn-success btn-block" type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

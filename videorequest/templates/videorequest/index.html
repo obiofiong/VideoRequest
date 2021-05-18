@@ -1,0 +1,24 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Request</title>
+    <link rel="stylesheet" href="{% static 'videorequest/bootstrap.min.css' %}">
+</head>
+
+<body>
+    <div class="container jumbotron">
+        <h2>Video Request Page</h2>
+        <p><a href="{% url 'vrform' %}" class="btn btn-link">Enter your video request</a></p>
+    </div>
+    {% for v in videos %}
+    <div class="container">
+        <h3 >{{v.videotitle}}</h3>
+        <p>{{v.videosec}}</p>
+    </div>
+    {% endfor %}
+</body>
+</html>
+
